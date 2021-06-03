@@ -1,0 +1,46 @@
+<header  *ngIf="this.service.isLoggedIn | async as isLoggedIn">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">Ecare</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-5 me-auto mb-2 mb-md-0 text-center">
+          <li class="nav-item" *ngIf="option1">
+            <a routerLink="/register" class="nav-link text-secondary">
+              Add Member
+            </a>
+          </li>
+          <li class="show-user" *ngIf="option2">
+            <a routerLink="/users" class="nav-link text-secondary">
+              All Users
+            </a>
+          </li>
+        </ul>
+        <h4 class="text-white my-auto me-5 fontsizeLarge">
+          <span *ngIf="country=='India'" class="flag-icon flag-icon-in flag-icon-squared"></span>
+          <span *ngIf="country=='UK'" class="flag-icon flag-icon-gb flag-icon-squared"></span>
+          <span *ngIf="country=='Canada'" class="flag-icon flag-icon-ca flag-icon-squared"></span>
+          {{country}}</h4>
+        <form class="d-flex">
+          <button
+            type="button"
+            class="btn btn-light text-dark me-2"
+            (click)="logout()"
+          >
+            Log Out
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>

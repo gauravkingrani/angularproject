@@ -1,0 +1,7 @@
+{
+  "user": { "option1": true, "option2": false, "forget_password": false  },
+  "admin": {
+    "option1": true,
+    "option2": true
+  }
+}
